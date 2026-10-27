@@ -1,10 +1,10 @@
-Problem
+// Problem
 
-A callback that is sometimes executed synchronously and sometimes asynchronously can cause unpredictable execution order. This situation is known as “releasing Zalgo.”
+// A callback that is sometimes executed synchronously and sometimes asynchronously can cause unpredictable execution order. This situation is known as “releasing Zalgo.”
 
-Solution
+// Solution
 
-We can make the callback always asynchronous by wrapping it inside "process.nextTick()".
+// We can make the callback always asynchronous by wrapping it inside "process.nextTick()".
 
 function doSomething(callback) {
     console.log("Start");
@@ -21,27 +21,27 @@ doSomething(() => {
     console.log("Callback executed");
 });
 
-Output
+//Output
 
-Start
-End
-Callback executed
+//Start
+//End
+//Callback executed
 
-Explanation
+//Explanation
 
-If the callback is called directly:
+//If the callback is called directly:
 
 callback();
 
-it executes synchronously, which means it runs immediately.
+//it executes synchronously, which means it runs immediately.
 
-By using:
+//By using:
 
 process.nextTick(() => {
     callback();
 });
 
-the callback is scheduled to execute after the current synchronous code has finished.
+//the callback is scheduled to execute after the current synchronous code has finished.
 
 Therefore, the execution order becomes:
 
