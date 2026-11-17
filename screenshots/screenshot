@@ -1,0 +1,9 @@
+screenshots/
+│
+├── http-server.png
+├── menu.png
+├── get-foods.png
+├── post-food.png
+├── put-food.png
+├── delete-food.png
+└── project-structure.png
